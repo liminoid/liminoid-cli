@@ -47,7 +47,7 @@ $ npm install -g liminoid
 For a more comprehensive guide to using the package see the [documentation](https://liminoid.io/reference/cli/) or the command line help: `liminoid -h` .
 
 <!-- prettier-ignore -->
-|  command  | argument | description  |
+|  command &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; | argument | description  |
 | :--------:  |:--:| :---------: |
 | `liminoid new [name]` | `[name]`: Name of project | Scaffold a new Liminoid application. Creates a directory of `[name]` in the current working directory from where command is run.  |
 |  `liminoid develop`  | `.` | Start live reloading development server. |
