@@ -49,7 +49,7 @@ For a more comprehensive guide to using the package see the [documentation](http
 <!-- prettier-ignore -->
 |  command  | argument | description  |
 | :--------:  |:--:| :--------- |
-| `liminoid new [name]` | `[name]`: Name of project | Scaffold a new Liminoid application. <br/>Creates a directory of `[name]` in the current working directory from where command is run.  |
+| `liminoid new [name]` | `[name]`: Name of project | Scaffold a new Liminoid application. <br/>Creates a directory of `[name]` in the current working directory.  |
 |  `liminoid develop`  | `.` | Start live reloading development server. |
 |   `liminoid build`   | `.` | Compile markdown, MDX, or JSX/React files into a self contained bundle. |
 
