@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "description": "Interactive analytics application built with Liminoid!",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "sideEffects": [
+    "*.md",
+    "*.mdx",
+    "*.css",
+    "*.html"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "vega": "^5.10.1",
+    "vega-embed": "^6.5.2",
+    "vega-lite": "^4.10.2"
+  }
+}
