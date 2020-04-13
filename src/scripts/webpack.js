@@ -10,7 +10,7 @@ const verbose = process.argv[4];
 // if not running in a subprocess just log to console
 process.send =
   process.send ||
-  function (obj) {
+  function send(obj) {
     console.log(obj);
   };
 
@@ -20,7 +20,7 @@ config.output = {
   path: output,
   filename: '[name].bundle.js',
   chunkFilename: '[chunkhash].liminoid.js',
-  pathinfo: false,
+  pathinfo: false
 };
 config.stats = verbose === 'true' ? 'normal' : 'errors-warnings';
 

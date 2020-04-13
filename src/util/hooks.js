@@ -1,20 +1,22 @@
 // if not running in a subprocess just log to console
 process.send =
   process.send ||
-  function (obj) {
+  function send(obj) {
     console.log(obj);
   };
 
-exports.attach = function (compiler) {
-  compiler.hooks.compile.tap('Liminoid', (compilationParams) => {
+exports.attach = function attach(compiler) {
+  compiler.hooks.compile.tap('Liminoid', compilationParams => {
     process.send({ action: 'compile', value: compilationParams });
   });
 
-  compiler.hooks.emit.tap('Liminoid', (compilation) => {
+  // eslint-disable-next-line no-unused-vars
+  compiler.hooks.emit.tap('Liminoid', compilation => {
     process.send({ action: 'emit', value: null });
   });
 
-  compiler.hooks.afterEmit.tap('Liminoid', (compilation) => {
+  // eslint-disable-next-line no-unused-vars
+  compiler.hooks.afterEmit.tap('Liminoid', compilation => {
     process.send({ action: 'afterEmit', value: null });
   });
 
@@ -24,18 +26,18 @@ exports.attach = function (compiler) {
       process.send({
         action: 'assetEmitted',
         value: {
-          file: file,
-          content: content,
-          source: source,
-          outputPath: outputPath,
-          compilation: compilation,
-          targetPath: targetPath,
-        },
+          file,
+          content,
+          source,
+          outputPath,
+          compilation,
+          targetPath
+        }
       });
     }
   );
 
-  compiler.hooks.done.tap('Liminoid', (stats) => {
+  compiler.hooks.done.tap('Liminoid', stats => {
     const {
       version,
       hash,
@@ -43,40 +45,41 @@ exports.attach = function (compiler) {
       builtAt,
       outputPath,
       assets,
-      entrypoints,
+      entrypoints
     } = stats.toJson();
 
     process.send({
       action: 'done',
       value: {
-        version: version,
-        hash: hash,
-        time: time,
-        builtAt: builtAt,
-        outputPath: outputPath,
-        assets: assets,
-        entrypoints: entrypoints,
-      },
+        version,
+        hash,
+        time,
+        builtAt,
+        outputPath,
+        assets,
+        entrypoints
+      }
     });
   });
 
-  compiler.hooks.failed.tap('Liminoid', (error) => {
+  compiler.hooks.failed.tap('Liminoid', error => {
     process.send({ action: 'failed', value: error });
   });
 
   return compiler;
 };
 
+/* eslint-disable no-unused-vars */
 function extraHooks(compiler) {
   compiler.hooks.entryOption.tap('Liminoid', (context, entry) => {
     console.log('entryOption');
   });
 
-  compiler.hooks.afterPlugins.tap('Liminoid', (compiler) => {
+  compiler.hooks.afterPlugins.tap('Liminoid', compilerCb => {
     console.log('afterPlugins');
   });
 
-  compiler.hooks.afterResolvers.tap('Liminoid', (compiler) => {
+  compiler.hooks.afterResolvers.tap('Liminoid', compilerCb => {
     console.log('afterResolvers');
   });
 
@@ -88,11 +91,11 @@ function extraHooks(compiler) {
     console.log('afterEnvironment');
   });
 
-  compiler.hooks.beforeRun.tap('Liminoid', (compiler) => {
+  compiler.hooks.beforeRun.tap('Liminoid', compilerCb => {
     console.log('beforeRun');
   });
 
-  compiler.hooks.run.tap('Liminoid', (compiler) => {
+  compiler.hooks.run.tap('Liminoid', compilerCb => {
     console.log('run');
   });
 
@@ -110,13 +113,14 @@ function extraHooks(compiler) {
     }
   );
 
-  compiler.hooks.make.tap('Liminoid', (compilation) => {
+  compiler.hooks.make.tap('Liminoid', compilation => {
     console.log('make');
   });
 
-  compiler.hooks.afterCompile.tap('Liminoid', (compilation) => {
+  compiler.hooks.afterCompile.tap('Liminoid', compilation => {
     console.log('afterCompile');
   });
 
   return compiler;
 }
+/* eslint-enable no-unused-vars */

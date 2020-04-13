@@ -1,9 +1,11 @@
+const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
-const package = require('../../package.json');
-
 const liminoid = require('liminoid-mdx');
+
+const { version } = require('../../package.json');
 
 const babelOpt = {
   sourceType: 'module',
@@ -13,11 +15,11 @@ const babelOpt = {
       {
         corejs: 2,
         useBuiltIns: 'usage',
-        targets: { esmodules: true },
-      },
+        targets: { esmodules: true }
+      }
     ],
-    '@babel/react',
-  ],
+    '@babel/react'
+  ]
 };
 
 const rules = {
@@ -27,8 +29,8 @@ const rules = {
       exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
-        options: babelOpt,
-      },
+        options: babelOpt
+      }
     },
     {
       test: /\.mdx?$/,
@@ -36,20 +38,20 @@ const rules = {
       use: [
         {
           loader: 'babel-loader',
-          options: babelOpt,
+          options: babelOpt
         },
         {
           loader: '@mdx-js/loader',
           options: {
-            remarkPlugins: [liminoid],
-          },
-        },
-      ],
-    },
-  ],
+            remarkPlugins: [liminoid]
+          }
+        }
+      ]
+    }
+  ]
 };
 
-const plugins = [
+const webpackPlugins = [
   new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
     inject: false,
@@ -72,25 +74,26 @@ const plugins = [
           ${htmlWebpackPlugin.tags.bodyTags}
         </body>
       </html>
-    `,
-  }),
+    `
+  })
 ];
 
 exports.development = {
   mode: 'development',
   devtool: 'inline-source-map',
-  plugins: plugins,
-  module: rules,
+  plugins: webpackPlugins,
+  module: rules
 };
 
 exports.production = {
   mode: 'production',
   devtool: 'source-map',
+  performance: { hints: false },
   optimization: {
-    usedExports: true,
+    usedExports: true
   },
-  plugins: plugins,
-  module: rules,
+  plugins: webpackPlugins,
+  module: rules
 };
 
 exports.devServer = {
@@ -98,12 +101,12 @@ exports.devServer = {
   stats: 'errors-warnings',
   liveReload: false,
   serveIndex: true,
-  open: false,
+  open: false
 };
 
 exports.liminoid = `
 module.exports = {
-  liminoid: '${package.version}',
+  liminoid: '${version}',
   node: '${process.version}',
   webpack: '${webpack.version}',
 };`.trim();

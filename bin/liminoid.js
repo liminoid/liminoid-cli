@@ -5,6 +5,7 @@ const chalk = require('chalk');
 const epilogue = chalk`\n\n{inverse ^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v}\n
 {rgb(139, 233, 253) Docs, examples, chat, contributing, license, etc.} 👉 {rgb(255, 121, 198) {underline https://liminoid.io}}`;
 
+// eslint-disable-next-line no-unused-expressions
 require('yargs')
   .scriptName('liminoid')
   .commandDir('cmds')

@@ -1,18 +1,18 @@
 const webpack = require('webpack');
-const devServer = require('webpack-dev-server');
+const DevServer = require('webpack-dev-server');
 
 const { development: config, devServer: dev } = require('../common/config');
 const hooks = require('../util/hooks');
 
 const input = process.argv[2];
-const port = parseInt(process.argv[3]);
+const port = parseInt(process.argv[3], 10);
 const verbose = process.argv[4];
 const hot = process.argv[5];
 
 // if not running in a subprocess just log to console
 process.send =
   process.send ||
-  function (obj) {
+  function send(obj) {
     console.log(obj);
   };
 
@@ -34,14 +34,14 @@ if (hot === 'true') {
   dev.liveReload = true;
 }
 
-const server = new devServer(hooks.attach(webpack(config)), dev);
+const server = new DevServer(hooks.attach(webpack(config)), dev);
 
-server.listen(port, '127.0.0.1').on('error', (err) => {
+server.listen(port, '127.0.0.1').on('error', err => {
   if (err.code === 'EADDRINUSE') {
     server.listen(0, '127.0.0.1', () => {
       process.send({
         action: 'port',
-        value: server.listeningApp.address().port,
+        value: server.listeningApp.address().port
       });
     });
   } else {

@@ -7,10 +7,10 @@ exports.builder = {
     alias: 'n',
     required: true,
     describe: 'Name for new project.',
-    type: 'string',
-  },
+    type: 'string'
+  }
 };
 
-exports.handler = async function (argv) {
+exports.handler = function newCmd(argv) {
   init(argv.name, {});
 };

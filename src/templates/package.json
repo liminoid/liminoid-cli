@@ -10,7 +10,16 @@
     "*.css",
     "*.html"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@mdx-js/loader": "^1.5.8",
+    "@mdx-js/mdx": "^1.5.8",
+    "babel-loader": "^8.0.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
   "dependencies": {
     "vega": "^5.10.1",
     "vega-embed": "^6.5.2",

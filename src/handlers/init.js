@@ -5,12 +5,13 @@ const { exec } = require('child_process');
 const ora = require('ora');
 const chalk = require('chalk');
 
-const package = require('../templates/package.json');
+const packageTemplate = require('../templates/package.json');
 const { liminoid: config } = require('../common/config');
 
 const { Msg } = require('../common/format');
 
-exports.init = function (name, options) {
+// eslint-disable-next-line no-unused-vars
+exports.init = function init(name, options) {
   const spinner = ora('Scaffolding new project 🎢').start();
 
   if (fs.existsSync(path.resolve(name))) {
@@ -51,13 +52,14 @@ exports.init = function (name, options) {
   fs.writeFileSync(path.join(path.resolve(name), 'liminoid.config.js'), config);
 
   spinner.succeed().start('Initializing package.json');
-  package.name = name;
+  packageTemplate.name = name;
   fs.writeFileSync(
     path.join(path.resolve(name), 'package.json'),
-    JSON.stringify(package)
+    JSON.stringify(packageTemplate)
   );
 
   spinner.succeed().start('Installing dependencies');
+  // eslint-disable-next-line no-unused-vars
   exec('npm install', { cwd: path.resolve(name) }, (error, stdout, stderr) => {
     if (error) {
       throw new TypeError(Msg.error(error));
