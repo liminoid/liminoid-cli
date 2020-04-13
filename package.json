@@ -1,0 +1,57 @@
+{
+  "name": "liminoid",
+  "version": "0.0.1",
+  "description": "Command line interface and toolchain for Liminoid.",
+  "keywords": [
+    "javascript",
+    "web assembly",
+    "python",
+    "pyodide",
+    "markdown",
+    "mdx",
+    "react",
+    "liminoid",
+    "cli",
+    "nodejs"
+  ],
+  "author": "Jonathan Dinu (https://memoryphone.me/)",
+  "license": "MIT",
+  "homepage": "https://github.com/liminoid/liminoid-cli",
+  "bugs": "https://github.com/liminoid/liminoid-cli/issues",
+  "main": "src/index.js",
+  "bin": {
+    "liminoid": "bin/liminoid.js"
+  },
+  "repository": "https://github.com/liminoid/liminoid-cli.git",
+  "files": [
+    "src/**/*.js",
+    "src/templates",
+    "bin"
+  ],
+  "prettier": {
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@mdx-js/loader": "^1.5.8",
+    "@mdx-js/mdx": "^1.5.8",
+    "babel-loader": "^8.0.6",
+    "boxen": "^4.2.0",
+    "chalk": "^4.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.2.0",
+    "liminoid-mdx": "^0.0.6",
+    "ora": "^4.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.1",
+    "webpack-dev-server": "^3.10.3",
+    "yargs": "^15.3.1"
+  }
+}
