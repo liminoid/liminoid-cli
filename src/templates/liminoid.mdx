@@ -1,0 +1,21 @@
+import vegaEmbed from 'vega-embed';
+import spec from './chart.json';
+
+# Hello Liminoid!
+
+For documentation, turorials, chat, etc. 👉 [https://liminoid.io](https://liminoid.io)
+
+## Markdown code blocks
+
+Liminoid ✨automagically✨ turns fenced code blocks into interactive scientific Python interpreters[^1]!
+
+```python packages=['numpy']; console=false; onResult=(res) => vegaEmbed('#vis', Object.assign(spec, { data: {values: Array.from(res)}}));
+import numpy as np
+
+# tolist() ensures that no weird type conversion happens going from numpy -> JS arrays
+np.random.binomial(10, 0.3, 50000).tolist()
+```
+
+<div id="vis"></div>
+
+[^1]: For the configurable options of the editor: [https://liminoid.io/guides/markdown/#meta](https://liminoid.io/guides/markdown/#meta)
