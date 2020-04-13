@@ -33,18 +33,25 @@
 ## Installation
 
 ```sh
-$ yarn add liminoid
+$ yarn global add liminoid
 ```
 
 or
 
 ```sh
-$ npm install --save liminoid
+$ npm install -g liminoid
 ```
 
 ## Usage
 
 For a more comprehensive guide to using the package see the [documentation](https://liminoid.io/reference/cli/) or the command line help: `liminoid -h` .
+
+<!-- prettier-ignore -->
+|  command  | argument | description  |
+| :--------:  |:--:| :---------: |
+| `liminoid new [name]` | `[name]`: Name of project | Scaffold a new Liminoid application. Creates a directory of `[name]` in the current working directory from where command is run.  |
+|  `liminoid develop`  | `.` | Start live reloading development server. |
+|   `liminoid build`   | `.` | Compile markdown, MDX, or JSX/React files into a self contained bundle. |
 
 ## Contributing/Requests
 
