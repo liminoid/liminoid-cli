@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "mark": "bar",
+  "mark": {
+    "type": "bar",
+    "fill": "#bd93f9"
+  },
   "encoding": {
     "x": {
       "bin": true,
