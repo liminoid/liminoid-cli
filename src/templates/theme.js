@@ -15,7 +15,7 @@ export default merge(preset, {
   },
   fonts: {
     body: 'system-ui, sans-serif',
-    heading: 'Georgia, serif'
+    heading: 'system-ui, sans-serif'
   },
   fontWeights: {
     body: 400,
