@@ -47,6 +47,10 @@ exports.init = function init(name, options) {
     path.join(templateDir, 'chart.json'),
     path.join(srcDir, 'chart.json')
   );
+  fs.copyFileSync(
+    path.join(templateDir, 'theme.js'),
+    path.join(srcDir, 'theme.js')
+  );
 
   spinner.succeed().start('Initializing liminoid.config.js');
   fs.writeFileSync(path.join(path.resolve(name), 'liminoid.config.js'), config);
