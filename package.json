@@ -1,6 +1,6 @@
 {
   "name": "liminoid",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Command line interface and toolchain for Liminoid.",
   "keywords": [
     "javascript",
@@ -61,7 +61,7 @@
   "dependencies": {
     "boxen": "^4.2.0",
     "chalk": "^4.0.0",
-    "liminoid-mdx": "^0.0.9",
+    "liminoid-mdx": "^0.0.10",
     "ora": "^4.0.3",
     "webpack": "^4.39.1",
     "webpack-dev-server": "^3.10.3",
