@@ -61,7 +61,7 @@
   "dependencies": {
     "boxen": "^4.2.0",
     "chalk": "^4.0.0",
-    "liminoid-mdx": "^0.0.10",
+    "liminoid-mdx": "^0.0.12",
     "ora": "^4.0.3",
     "webpack": "^4.39.1",
     "webpack-dev-server": "^3.10.3",

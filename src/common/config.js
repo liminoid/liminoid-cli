@@ -11,13 +11,12 @@ const babelOpt = {
     [
       '@babel/preset-env',
       {
-        corejs: 2,
         useBuiltIns: 'usage',
-        targets: { esmodules: true }
-      }
+        targets: { esmodules: true },
+      },
     ],
-    '@babel/react'
-  ]
+    '@babel/react',
+  ],
 };
 
 const rules = {
@@ -27,8 +26,8 @@ const rules = {
       exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
-        options: babelOpt
-      }
+        options: babelOpt,
+      },
     },
     {
       test: /\.mdx?$/,
@@ -36,17 +35,17 @@ const rules = {
       use: [
         {
           loader: 'babel-loader',
-          options: babelOpt
+          options: babelOpt,
         },
         {
           loader: '@mdx-js/loader',
           options: {
-            remarkPlugins: [liminoid]
-          }
-        }
-      ]
-    }
-  ]
+            remarkPlugins: [liminoid],
+          },
+        },
+      ],
+    },
+  ],
 };
 
 const webpackPlugins = [
@@ -72,15 +71,15 @@ const webpackPlugins = [
           ${htmlWebpackPlugin.tags.bodyTags}
         </body>
       </html>
-    `
-  })
+    `,
+  }),
 ];
 
 exports.development = {
   mode: 'development',
   devtool: 'inline-source-map',
   plugins: webpackPlugins,
-  module: rules
+  module: rules,
 };
 
 exports.production = {
@@ -88,10 +87,10 @@ exports.production = {
   devtool: 'source-map',
   performance: { hints: false },
   optimization: {
-    usedExports: true
+    usedExports: true,
   },
   plugins: webpackPlugins,
-  module: rules
+  module: rules,
 };
 
 exports.devServer = {
@@ -99,7 +98,7 @@ exports.devServer = {
   stats: 'errors-warnings',
   liveReload: false,
   serveIndex: true,
-  open: false
+  open: false,
 };
 
 exports.liminoid = `
