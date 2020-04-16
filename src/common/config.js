@@ -11,6 +11,7 @@ const babelOpt = {
     [
       '@babel/preset-env',
       {
+        corejs: 3,
         useBuiltIns: 'usage',
         targets: { esmodules: true },
       },

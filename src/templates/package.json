@@ -23,7 +23,9 @@
     "@rebass/preset": "^4.0.5",
     "@theme-ui/prism": "^0.3.0",
     "lodash.merge": "^4.6.2",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "core-js": "^3.6.5",
+    "liminoid-react": "^0.0.17"
   },
   "dependencies": {
     "vega": "^5.10.1",

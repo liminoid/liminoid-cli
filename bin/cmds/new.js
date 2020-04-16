@@ -7,8 +7,8 @@ exports.builder = {
     alias: 'n',
     required: true,
     describe: 'Name for new project.',
-    type: 'string'
-  }
+    type: 'string',
+  },
 };
 
 exports.handler = function newCmd(argv) {

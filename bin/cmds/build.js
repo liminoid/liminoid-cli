@@ -8,20 +8,20 @@ exports.builder = {
     alias: 'i',
     default: './src/index.js',
     describe: 'Input entry point.',
-    type: 'string'
+    type: 'string',
   },
   output: {
     alias: 'o',
     default: './build',
     describe: 'Output directory.',
-    type: 'string'
+    type: 'string',
   },
   verbose: {
     alias: 'v',
     default: false,
     describe: 'Display internal Webpack build logs.',
-    type: 'boolean'
-  }
+    type: 'boolean',
+  },
 };
 
 exports.handler = function buildCmd(argv) {

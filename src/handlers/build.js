@@ -11,7 +11,7 @@ exports.build = function build(input, output, options) {
     [
       path.resolve(input),
       path.resolve(output),
-      options.verbose ? 'true' : 'false'
+      options.verbose ? 'true' : 'false',
     ],
     { stdio: 'pipe' }
   );

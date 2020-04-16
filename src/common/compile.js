@@ -7,7 +7,7 @@ exports.compile = function compile(input, webpack, options, callback) {
   const spinner = ora('Gathering tools 🧰').start();
 
   const state = { port: options.port };
-  webpack.on('message', m => {
+  webpack.on('message', (m) => {
     switch (m.action) {
       case 'port':
         state.port = m.value;
@@ -55,13 +55,13 @@ exports.compile = function compile(input, webpack, options, callback) {
     }
   });
 
-  webpack.stdout.on('data', data => {
+  webpack.stdout.on('data', (data) => {
     if (options.verbose) {
       console.log(data.toString());
     }
   });
 
-  webpack.stderr.on('data', error => {
+  webpack.stderr.on('data', (error) => {
     if (spinner && spinner.isSpinning) {
       spinner.fail();
     }
@@ -69,7 +69,7 @@ exports.compile = function compile(input, webpack, options, callback) {
     throw new Error(Msg.error(error));
   });
 
-  webpack.on('exit', code => {
+  webpack.on('exit', (code) => {
     if (spinner && spinner.isSpinning) {
       spinner.fail();
     }

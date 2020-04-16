@@ -36,12 +36,12 @@ if (hot === 'true') {
 
 const server = new DevServer(hooks.attach(webpack(config)), dev);
 
-server.listen(port, '127.0.0.1').on('error', err => {
+server.listen(port, '127.0.0.1').on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
     server.listen(0, '127.0.0.1', () => {
       process.send({
         action: 'port',
-        value: server.listeningApp.address().port
+        value: server.listeningApp.address().port,
       });
     });
   } else {

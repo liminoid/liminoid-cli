@@ -12,7 +12,7 @@ exports.develop = function develop(input, options) {
       path.resolve(input),
       options.port,
       options.verbose ? 'true' : 'false',
-      options.hot ? 'true' : 'false'
+      options.hot ? 'true' : 'false',
     ],
     { stdio: 'pipe' }
   );

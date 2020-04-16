@@ -20,7 +20,7 @@ config.output = {
   path: output,
   filename: '[name].bundle.js',
   chunkFilename: '[chunkhash].liminoid.js',
-  pathinfo: false
+  pathinfo: false,
 };
 config.stats = verbose === 'true' ? 'normal' : 'errors-warnings';
 
