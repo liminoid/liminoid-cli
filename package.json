@@ -63,7 +63,7 @@
     "chalk": "^4.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^4.2.0",
-    "liminoid-mdx": "^0.0.15",
+    "liminoid-mdx": "^0.0.16",
     "ora": "^4.0.3",
     "prettier": "^2.0.4",
     "webpack": "^4.39.1",
