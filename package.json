@@ -1,6 +1,6 @@
 {
   "name": "liminoid",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Command line interface and toolchain for Liminoid.",
   "keywords": [
     "javascript",
