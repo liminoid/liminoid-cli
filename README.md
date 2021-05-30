@@ -1,34 +1,4 @@
-<div align="center">
-
-  <h1>🔵🔴 liminoid-cli 🔴🔵</h1>
-
-<strong>Command line interface and toolchain for Liminoid.</strong>
-
-</div>
-
-<div align="center">
-  <h4>
-    <a href="https://liminoid.io/reference/cli/">
-      Documentation
-    </a>
-    <span> | </span>
-    <a href="https://discord.gg/wWUXSDj">
-      Chatroom
-    </a>
-    <span> | </span>
-    <a href="https://twitter.com/liminoid_io">
-      Twitter
-    </a>
-    <span> | </span>
-    <a href="https://stackoverflow.com/questions/tagged/liminoid">
-      Stack Overflow
-    </a>
-    <span> | </span>
-    <a href="https://liminoid.io/contributing/">
-      Contributing
-    </a>
-  </h4>
-</div>
+> ⚠️ Package has moved to [run-the-docs](https://www.npmjs.com/package/run-the-docs) and development has moved to [psychothan/run-the-docs](https://github.com/psychothan/run-the-docs) ⚠️
 
 ## Installation
 
